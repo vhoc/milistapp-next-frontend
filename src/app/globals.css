@@ -25,3 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 }
+
+.gradient {
+  background: linear-gradient(90deg, #1ea7d6 0%, #963cfd 100%);
+}
