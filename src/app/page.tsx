@@ -142,7 +142,7 @@ export default function Home() {
                     </h3>
                     <p className="text-gray-600 mb-8">
                       Revisa tu correo y activa tu cuenta desde el botón del mensaje que te llegará al registrarte. 
-                      Si no ves el correo de activación, busca en tu carpeta de "Spam", "Correo no deseado", o en "Todos".
+                      Si no ves el correo de activación, busca en tu carpeta de &quot;Spam&quot;, &quot;Correo no deseado&quot;, o en &quot;Todos&quot;.
                       
                     </p>
                   </div>
@@ -241,7 +241,10 @@ export default function Home() {
                       </p>
                       <br />
                       <p>
-                      En "MiListApp", nos tomamos muy en serio la protección de tus datos personales. Este Aviso de Políticas de Privacidad tiene como objetivo informarte sobre cómo recopilamos, utilizamos y protegemos la información que nos proporcionas al utilizar nuestra aplicación. Te recomendamos leer detenidamente este aviso para que estés al tanto de tus derechos y cómo manejamos tus datos.
+                      En &quot;MiListApp&quot;, nos tomamos muy en serio la protección de tus datos personales. 
+                      Este Aviso de Políticas de Privacidad tiene como objetivo informarte sobre cómo recopilamos, 
+                      utilizamos y protegemos la información que nos proporcionas al utilizar nuestra aplicación.
+                       Te recomendamos leer detenidamente este aviso para que estés al tanto de tus derechos y cómo manejamos tus datos.
                       </p>
                       <br />
                       <h3>
@@ -249,7 +252,7 @@ export default function Home() {
                       </h3>
 
                       <p>
-                        Al utilizar "MiListApp", podemos recopilar los siguientes datos personales:
+                        Al utilizar &quot;MiListApp&quot;, podemos recopilar los siguientes datos personales:
                       </p>
 
                       <ul className="list-disc pl-6 mb-6">
@@ -263,7 +266,7 @@ export default function Home() {
                           <strong>Números Telefónicos del Usuario:</strong> OPCIONAL - Si decides proporcionarnos tu número de teléfono, lo usaremos para fines de autenticación y para mejorar la seguridad de tu cuenta.
                         </li>
                         <li>
-                          <strong>Redes Sociales del Usuario: </strong> OPCIONAL - Si decides vincular tus redes sociales a "MiListApp", podremos acceder a ciertos datos públicos de tu perfil, como tu foto de perfil y nombre de usuario, para brindarte una experiencia más personalizada.
+                          <strong>Redes Sociales del Usuario: </strong> OPCIONAL - Si decides vincular tus redes sociales a &quot;MiListApp&quot;, podremos acceder a ciertos datos públicos de tu perfil, como tu foto de perfil y nombre de usuario, para brindarte una experiencia más personalizada.
                         </li>
                       </ul>
 
@@ -295,7 +298,7 @@ export default function Home() {
                       
 
                       <h3>5. Seguridad de tus Datos Personales:</h3>
-                      <p>En "MiListApp", implementamos medidas de seguridad para proteger tus datos personales contra el acceso no autorizado y la divulgación. Utilizamos tecnologías de cifrado y prácticas de seguridad estándar de la industria.</p>
+                      <p>En &quot;MiListApp&quot;, implementamos medidas de seguridad para proteger tus datos personales contra el acceso no autorizado y la divulgación. Utilizamos tecnologías de cifrado y prácticas de seguridad estándar de la industria.</p>
 
                       <h3>6. Cambios en el Aviso de Privacidad:</h3>
                       <p>Nos reservamos el derecho de actualizar este Aviso de Políticas de Privacidad en cualquier momento. Te notificaremos de cualquier cambio a través de la aplicación o por correo electrónico.</p>
@@ -304,7 +307,7 @@ export default function Home() {
                       <p>Si tienes alguna pregunta o inquietud sobre este Aviso de Políticas de Privacidad o la forma en que tratamos tus datos personales, puedes contactarnos en privacidad@milist.app</p>
                       <br />
                       <p>
-                      Gracias por confiar en "MiListApp" para gestionar tu listado de productos y servicios. Tu privacidad es importante para nosotros, y trabajamos arduamente para proteger tus datos personales y brindarte la mejor experiencia posible.
+                      Gracias por confiar en &quot;MiListApp&quot; para gestionar tu listado de productos y servicios. Tu privacidad es importante para nosotros, y trabajamos arduamente para proteger tus datos personales y brindarte la mejor experiencia posible.
                       </p>
 
                     </div>
