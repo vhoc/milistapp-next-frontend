@@ -8,7 +8,7 @@ import ContactButton from "@/components/ContactButton";
 import { IContactMethod } from "@/app/lib/types";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-import Head from "next/head";
+// import Head from "next/head";
 
 const ProductPage = async ( { params }: {
     params: { productXid: string }
@@ -37,12 +37,12 @@ const ProductPage = async ( { params }: {
                 zIndex: 1,
             }}
         >
-            <Head>
+            {/* <Head>
                 <title>{ product.title }</title>
                 <meta property="og:title" content={ product.title } key={ product.title } />
                 <meta property="og:description" content={ product.description } key={ product.description } />
                 <meta property="og:image" content={ productImages.images[0].url } key={ 'Product Image' } />
-            </Head>
+            </Head> */}
            <NavBar catalogId={ catalogData.catalog.id } productTitle={ product.title } productId={ product.id }/>
 
            <div className={'mt-28 flex flex-col bg-white w-full max-w-7xl text-slate-800 p-4 mt-1 rounded-lg gap-4 divide-y-2 mb-32'}>

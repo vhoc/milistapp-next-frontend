@@ -9,17 +9,25 @@ import imgCustomize from '../assets/customize.png'
 import imgShare from '../assets/share-button.png'
 import imgShareMsg from '../assets/share-message.png'
 import { titilliumRegular } from './ui/fonts'
-import Head from 'next/head'
+import { Metadata } from 'next'
+// import Head from 'next/head'
+
+export const metadata: Metadata = {
+  openGraph: {
+    images: [
+      {
+        url: "https://api.milist.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "MiListApp",
+      }
+    ]
+  }
+}
 
 export default function Home() {
   return (
     <>
-      <Head>
-        <title>MiListApp :: Tu catálogo en línea</title>
-        <meta property="og:title" content={ 'MiListApp :: Tu catálogo en línea' } key={ 'MiListApp :: Tu catálogo en línea' } />
-        <meta property="og:description" content={ 'Crea, personaliza y publica todos tus preoductos en un solo catálogo web.' } key={ 'Crea, personaliza y publica todos tus preoductos en un solo catálogo web.' } />
-        <meta property="og:image" content={ 'https://api.milist.app/og-image.png' } key={ 'MiListApp' } />
-      </Head>
         {/* all the other elements */}
         <div id="detail" className={`${titilliumRegular.className} leading-normal tracking-normal text-white gradient`}>
           
