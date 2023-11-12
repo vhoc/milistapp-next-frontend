@@ -8,7 +8,27 @@ import ContactButton from "@/components/ContactButton";
 import { IContactMethod } from "@/app/lib/types";
 import Footer from "@/components/Footer";
 import Image from "next/image";
-// import Head from "next/head";
+import { Metadata, ResolvingMetadata } from "next"
+
+type Props = {
+    params: { productXid: string },
+}
+export const generateMetadata = async ( { params }: Props, parent: ResolvingMetadata ): Promise<Metadata> => {
+    const  productXid = params.productXid
+    const product = await fetchProduct( productXid )
+    const productImages = await fetchProductImages( product.id )
+
+    return {
+        title: product.title || "Producto",
+        description: product.description || "",
+        openGraph: {
+            images: [
+                productImages.images[0].url || 'https://api.milist.app/og-image.png'
+            ]
+        }
+    }
+
+}
 
 const ProductPage = async ( { params }: {
     params: { productXid: string }

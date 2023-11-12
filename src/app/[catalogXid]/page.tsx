@@ -6,7 +6,27 @@ import ProductList from "@/components/ProductList"
 import { titilliumRegular } from "../ui/fonts"
 import NotFoundPage from "@/components/404"
 import Footer from "@/components/Footer"
-// import Head from "next/head"
+import { Metadata, ResolvingMetadata } from "next"
+
+type Props = {
+    params: { catalogXid: string },
+}
+export const generateMetadata = async ( { params }: Props, parent: ResolvingMetadata ): Promise<Metadata> => {
+    const  catalogXid = params.catalogXid
+    const catalogData = await fetchCatalogData( catalogXid )
+    const catalogOptions = catalogData && catalogData.catalog && catalogData.catalog.id ? await fetchCatalogOptions( catalogData.catalog.id ) : null
+
+    return {
+        title: catalogOptions.custom_title || catalogData.catalog.name,
+        description: catalogOptions.custom_subtitle || "Catálogo de productos y servicios",
+        openGraph: {
+            images: [
+                catalogOptions.heading_image_url || 'https://api.milist.app/og-image.png'
+            ]
+        }
+    }
+
+}
 
 const CatalogPage = async ({ params, }: {
     params: { catalogXid: string }
