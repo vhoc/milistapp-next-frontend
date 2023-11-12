@@ -1,10 +1,17 @@
 "use client"
 
+import { IProduct } from "@/app/lib/types"
 import { FacebookShareButton, FacebookIcon, WhatsappShareButton, WhatsappIcon, FacebookMessengerShareButton, FacebookMessengerIcon } from "next-share"
 
-const ShareIcons = () => {
+interface Props {
+    url: string
+    productId: string
+}
 
-    const currentUrl = window.location.href
+const ShareIcons = ( { url, productId }: Props ) => {
+
+    const currentUrl = `https://${ url }/products/${ productId}`
+    // console.log(currentUrl)
     
     return (
         <div className="flex flex-1 w-full justify-end gap-2">

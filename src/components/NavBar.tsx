@@ -7,11 +7,13 @@ import { HTMLAttributes } from "react"
 interface Props extends HTMLAttributes<HTMLDivElement> {
     catalogId: string
     productTitle: string
+    productId: string
 }
 
-const NavBar = ({ catalogId, productTitle, ...props }: Props) => {
+const NavBar = ({ catalogId, productTitle, productId, ...props }: Props) => {
 
     const url = process.env.CONF_FRONTEND_DOMAIN
+    // console.log(url)
 
     return (
         <div className={'flex flex-3 justify-between items-center bg-white w-full max-w-7xl p-4 shadow-md gap-2 fixed top-0'} {...props}>
@@ -28,8 +30,11 @@ const NavBar = ({ catalogId, productTitle, ...props }: Props) => {
             </div>
 
             <div className={'text-slate-800 font-bold flex-1 text-center text-2xl truncate'}>{ productTitle }</div>
-
-            <ShareIcons />
+            { url && productId ?
+                <ShareIcons url={url} productId={productId} />
+            :
+                null
+            }
             
         </div>
     )

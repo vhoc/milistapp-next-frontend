@@ -4,15 +4,23 @@ import { fetchCatalogData, fetchCatalogOptions } from "../lib/data"
 import Hero from "@/components/Hero"
 import ProductList from "@/components/ProductList"
 import { titilliumRegular } from "../ui/fonts"
+import NotFoundPage from "@/components/404"
+import Footer from "@/components/Footer"
 
 const CatalogPage = async ({ params, }: {
     params: { catalogXid: string }
 }) => {
 
     const catalogData = await fetchCatalogData( params.catalogXid )
-    const catalogOptions = await fetchCatalogOptions( catalogData.catalog.id )
+    const catalogOptions = catalogData && catalogData.catalog && catalogData.catalog.id ? await fetchCatalogOptions( catalogData.catalog.id ) : null
 
-    // console.log(`catalogOptions`, catalogOptions)
+    // console.log(catalogData.catalog)
+
+    if ( !catalogData.catalog ) {
+        return (
+            <NotFoundPage />
+        )
+    }
 
     return (
         <div
@@ -40,6 +48,8 @@ const CatalogPage = async ({ params, }: {
         :
             null
         }
+
+            <Footer />
 
         </div>
     )

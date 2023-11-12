@@ -13,7 +13,7 @@ const ProductList = async ({ catalog }: Props) => {
     // console.log(`ProductList/products: `, products)
 
     return (
-        <div className={'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-7xl gap-6'}>
+        <div className={'grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 w-full max-w-7xl gap-6 mb-32'}>
         { catalog && products && products.length >= 1 ?
             products.map( (product: IProduct, index: number) => (
                 <CatalogItem

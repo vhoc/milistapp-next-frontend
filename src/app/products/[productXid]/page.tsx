@@ -6,6 +6,7 @@ import NavBar from "@/components/NavBar";
 import { toMoneyString } from "@/app/lib/formatters";
 import ContactButton from "@/components/ContactButton";
 import { IContactMethod } from "@/app/lib/types";
+import Footer from "@/components/Footer";
 import Image from "next/image";
 
 const ProductPage = async ( { params }: {
@@ -35,9 +36,9 @@ const ProductPage = async ( { params }: {
                 zIndex: 1,
             }}
         >
-           <NavBar catalogId={ catalogData.catalog.id } productTitle={ product.title }/>
+           <NavBar catalogId={ catalogData.catalog.id } productTitle={ product.title } productId={ product.id }/>
 
-           <div className={'mt-28 flex flex-col bg-white w-full max-w-7xl text-slate-800 p-4 mt-1 rounded-lg gap-4 divide-y-2'}>
+           <div className={'mt-28 flex flex-col bg-white w-full max-w-7xl text-slate-800 p-4 mt-1 rounded-lg gap-4 divide-y-2 mb-32'}>
 
                 <div className="flex flex-wrap w-full max-w-7xl gap-4">
 
@@ -92,7 +93,9 @@ const ProductPage = async ( { params }: {
                     null
                 }                
                 
-            </div>                
+            </div>
+
+            <Footer />
 
         </div>
     )

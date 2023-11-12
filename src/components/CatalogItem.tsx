@@ -24,14 +24,16 @@ const CatalogItem = async ({ product, catalog, ...props }:CatalogItemProps) => {
         <div className={'flex flex-col justify-start rounded-lg bg-white shadow-xl divide-y'}>
         { images && images.length >= 1 ?
             <div className={'aspect-square rounded-t-lg'}>
-                <Image
-                    className={'w-full rounded-t-lg'}
-                    width={320}
-                    height={320}
-                    // fill
-                    src={ images[0].url }
-                    alt={ product.title }
-                />
+                <a href={`products/${ product.hexId }`}>
+                    <Image
+                        className={'w-full rounded-t-lg'}
+                        width={320}
+                        height={320}
+                        // fill
+                        src={ images[0].url }
+                        alt={ product.title }
+                    />
+                </a>
             </div>
         :
             null
