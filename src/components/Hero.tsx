@@ -30,14 +30,14 @@ const Hero = ({ catalogOptions }: Props): JSX.Element => {
             }}
         >
             <h1
-                className={`${ titilliumBold.className } antialiased text-center text-7xl font-bold text-shadow shadow-black`}
+                className={`${ titilliumBold.className } antialiased text-center text-5xl font-bold text-shadow shadow-black line-clamp-3`}
                 style={{ color: catalogOptions?.color_title }}
             >
                 { catalogOptions?.custom_title }
             </h1>
 
             <h2
-                className={`text-center text-4xl font-bold text-shadow shadow-black`}
+                className={`text-center text-3xl font-bold text-shadow shadow-black line-clamp-3`}
                 style={{ color: catalogOptions.color_subtitle }}
             >
                 { catalogOptions.custom_subtitle }
