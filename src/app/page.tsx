@@ -86,7 +86,7 @@ export default function Home() {
                 </h2>
                 {/* GOOGLE PLAY BUTTON */}
                 <div className="w-full flex justify-center md:justify-normal" >
-                  <a href="#">
+                  <a href="https://play.google.com/store/apps/details?id=com.vhoc.milistapp" target="_blank">
                     <Image src={btnGooglePlay} width={200} height={40} alt="Descarga la App" />
                   </a>
                 </div>
@@ -444,7 +444,7 @@ export default function Home() {
               ¡Descarga la App y publica tu negocio!
             </h3>
             <div>
-              <a href="#">
+              <a href="https://play.google.com/store/apps/details?id=com.vhoc.milistapp" target="_blank">
                 <Image src={btnGooglePlay} width={200} height={60} alt="Descarga la App" />
               </a>
             </div>
