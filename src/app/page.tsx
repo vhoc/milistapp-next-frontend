@@ -344,7 +344,7 @@ export default function Home() {
 
               <div className="flex flex-col justify-center pt-12 my-12 sm:my-4 text-center">
                 <p>
-                  Puedes tener hasta 100 productos en tu catálogo de forma completamente gratis.
+                  Por lanzamiento podrás tener hasta 100 productos en tu catálogo de forma completamente gratis.
                 </p>
                 <p>
                   Próximamente haremos disponible un plan premium que te permitirá tener muchos más productos en tu catálogo y otras

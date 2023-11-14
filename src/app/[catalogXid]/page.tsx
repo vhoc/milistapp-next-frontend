@@ -11,6 +11,7 @@ import { Metadata, ResolvingMetadata } from "next"
 type Props = {
     params: { catalogXid: string },
 }
+
 export const generateMetadata = async ( { params }: Props, parent: ResolvingMetadata ): Promise<Metadata> => {
     const  catalogXid = params.catalogXid
     const catalogData = await fetchCatalogData( catalogXid )
@@ -61,12 +62,6 @@ const CatalogPage = async ({ params, }: {
                 // border: `3px solid red`
             }}
         >
-            {/* <Head>
-                <title>Mi Catálogo</title>
-                <meta property="og:title" content={ catalogOptions.custom_title || catalogData.catalog.name } key={ catalogOptions.custom_title || catalogData.catalog.name } />
-                <meta property="og:description" content={ catalogOptions.custom_subtitle || "Catálogo de productos y servicios" } key={ catalogOptions.custom_subtitle || "Catálogo de productos y servicios" } />
-                <meta property="og:image" content={ catalogOptions.heading_image_url || 'https://api.milist.app/og-image.png' } key={ 'Portada del catálogo' } />
-            </Head> */}
             <Hero catalogOptions={catalogOptions} />
 
         { catalogData ?
@@ -81,5 +76,6 @@ const CatalogPage = async ({ params, }: {
     )
 
 }
+
 
 export default CatalogPage
