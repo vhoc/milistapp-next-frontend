@@ -109,8 +109,9 @@ const ProductPage = async ( { params }: {
                             <Image
                                 src={ productImages.images[0].url }
                                 className={'w-full rounded-t-lg'}
-                                width={320}
-                                height={320}
+                                width={768}
+                                height={768}
+                                quality={90}
                                 alt={ product.title }
                             />
                         </a>
