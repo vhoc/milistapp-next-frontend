@@ -1,6 +1,6 @@
 export const fetchCatalogData = async ( catalogHexId: string ) => {
     try {
-        const response = await fetch(`https://api.milist.app/api/mla/catalog/${ catalogHexId }`)
+        const response = await fetch(`https://api.milist.app/api/mla/catalog/${ catalogHexId }`, { next: { revalidate: 600 } })
         const json = await response.json()
         // console.log(json)
         return json
@@ -12,7 +12,7 @@ export const fetchCatalogData = async ( catalogHexId: string ) => {
 
 export const fetchCatalogOptions = async ( catalogId: string ) => {
     try {
-        const response = await fetch(`https://api.milist.app/api/mla/catalogOptions/${ catalogId }`, { cache: 'no-store' })
+        const response = await fetch(`https://api.milist.app/api/mla/catalogOptions/${ catalogId }`, { next: { revalidate: 60 } })
         const json = await response.json()
         // console.log(json)
         return json
@@ -24,7 +24,7 @@ export const fetchCatalogOptions = async ( catalogId: string ) => {
 
 export const fetchProducts = async ( catalogId: string ) => {
     try {
-        const response = await fetch(`https://api.milist.app/api/mla/user/${ catalogId }/products`, { cache: 'no-store' })
+        const response = await fetch(`https://api.milist.app/api/mla/user/${ catalogId }/products`, { next: { revalidate: 60 } })
         const json = await response.json()
         return json        
     } catch (error) {
@@ -35,7 +35,7 @@ export const fetchProducts = async ( catalogId: string ) => {
 
 export const fetchProduct = async ( productHexId: string ) => {
     try {
-        const response = await fetch(`https://api.milist.app/api/mla/products/${ productHexId }`, { cache: 'no-store' })
+        const response = await fetch(`https://api.milist.app/api/mla/products/${ productHexId }`, { next: { revalidate: 60 } })
         const json = await response.json()
         return json
     } catch (error) {
@@ -46,7 +46,7 @@ export const fetchProduct = async ( productHexId: string ) => {
 
 export const fetchProductImages = async ( productId: string ) => {
     try {
-        const response = await fetch(`https://api.milist.app/api/mla/products/${ productId }/images`, { cache: 'no-store' })
+        const response = await fetch(`https://api.milist.app/api/mla/products/${ productId }/images`, { next: { revalidate: 60 } })
         const json = await response.json()
         return json
     } catch (error) {
@@ -57,7 +57,7 @@ export const fetchProductImages = async ( productId: string ) => {
 
 export const fetchContactMethods = async ( catalogId: string ) => {
     try {
-        const response = await fetch(`https://api.milist.app/api/mla/contactMethods/${ catalogId }`, { cache: 'no-store' })
+        const response = await fetch(`https://api.milist.app/api/mla/contactMethods/${ catalogId }`, { next: { revalidate: 60 } })
         const json = await response.json()
         return json
     } catch (error) {

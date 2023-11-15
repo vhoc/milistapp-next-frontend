@@ -14,9 +14,9 @@ export interface CatalogItemProps extends CardProps {
 const CatalogItem = async ({ product, catalog, ...props }:CatalogItemProps) => {
 
     const imgResponse = await fetchProductImages( product.id )
-    const images = imgResponse.images
+    const images = imgResponse.images ? imgResponse.images : []
     const cmResponse = await fetchContactMethods( catalog.id )
-    const contactMethods = cmResponse.contact_methods
+    const contactMethods = cmResponse.contact_methods ? cmResponse.contact_methods : []
     
     // console.log(`CatalogItem/contactMethods: `, contactMethods)
 

@@ -13,20 +13,28 @@ import { Metadata, ResolvingMetadata } from "next"
 type Props = {
     params: { productXid: string },
 }
-export const generateMetadata = async ( { params }: Props, parent: ResolvingMetadata ): Promise<Metadata> => {
-    const  productXid = params.productXid
-    const product = await fetchProduct( productXid )
-    const productImages = await fetchProductImages( product.id )
-
-    return {
-        title: product.title || "Producto",
-        description: product.description || "",
-        openGraph: {
-            images: [
-                productImages.images[0].url || 'https://api.milist.app/og-image.png'
-            ]
+export const generateMetadata = async ( { params }: Props, parent: ResolvingMetadata ): Promise<Metadata | undefined> => {
+    const productXid = params.productXid
+    
+    if (productXid) {
+        const product = await fetchProduct( productXid )
+        if ( product ) {
+            const productImages = await fetchProductImages( product.id )
+            if ( productImages ) {
+                return {
+                    title: product.title || "Producto",
+                    description: product.description || "",
+                    openGraph: {
+                        images: [
+                            productImages.images[0].url || 'https://api.milist.app/og-image.png'
+                        ]
+                    }
+                }
+            }
         }
     }
+
+    
 
 }
 

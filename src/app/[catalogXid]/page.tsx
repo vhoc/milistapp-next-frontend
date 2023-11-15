@@ -18,11 +18,11 @@ export const generateMetadata = async ( { params }: Props, parent: ResolvingMeta
     const catalogOptions = catalogData && catalogData.catalog && catalogData.catalog.id ? await fetchCatalogOptions( catalogData.catalog.id ) : null
 
     return {
-        title: catalogOptions.custom_title || catalogData.catalog.name,
-        description: catalogOptions.custom_subtitle || "Catálogo de productos y servicios",
+        title: catalogOptions.custom_title ? catalogOptions.custom_title : catalogData.catalog.name ? catalogData.catalog.name : "Catálogo en línea",
+        description: catalogOptions.custom_subtitle ? catalogOptions.custom_subtitle : "Catálogo de productos y servicios",
         openGraph: {
             images: [
-                catalogOptions.heading_image_url || 'https://api.milist.app/og-image.png'
+                catalogOptions.heading_image_url ? catalogOptions.heading_image_url : 'https://api.milist.app/og-image.png'
             ]
         }
     }
