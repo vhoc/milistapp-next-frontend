@@ -20,7 +20,8 @@
     "next": "14.0.2",
     "next-share": "^0.27.0",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sharp": "^0.33.1"
   },
   "devDependencies": {
     "@types/node": "^20",
