@@ -4,8 +4,9 @@ export interface IContactMethod {
 }
 
 export interface IProduct {
-    id: string
-    hexId: string
+    id: string | number
+    catalog_id: number
+    alphanumId: string
     user_id: number
     title: string
     price?: number | undefined
@@ -14,9 +15,9 @@ export interface IProduct {
 }
 
 export interface ICatalog {
-    id: string
-    slug: string// hexId
-    name: string
+    id: number
+    alphaNumId: string// hexId
+    // name: string
 }
 
 export interface ICatalogOptions {

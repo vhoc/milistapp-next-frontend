@@ -1,30 +1,35 @@
-import { Card, CardBody, CardFooter } from '@nextui-org/react';
 import { CardProps } from '@nextui-org/react';
 import Image from 'next/image';
-import { ICatalog, IProduct, IContactMethod } from '../app/lib/types'
+import { IProduct, IContactMethod } from '../app/lib/types'
 import { fetchProductImages, fetchContactMethods } from '@/app/lib/data';
 import { toMoneyString } from '@/app/lib/formatters';
 import ContactButton from './ContactButton';
 
 export interface CatalogItemProps extends CardProps {
     product: IProduct
-    catalog: ICatalog
+    catalogId: number
+    // images: string[]
+    // contactMethods: IContactMethod[]
 }
 
-const CatalogItem = async ({ product, catalog, ...props }:CatalogItemProps) => {
+const CatalogItem = async ({ product, catalogId, ...props }:CatalogItemProps) => {
 
-    const imgResponse = await fetchProductImages( product.id )
-    const images = imgResponse.images ? imgResponse.images : []
-    const cmResponse = await fetchContactMethods( catalog.id )
-    const contactMethods = cmResponse.contact_methods ? cmResponse.contact_methods : []
+    // const imgResponse = await fetchProductImages( product.id )
+    // const images = imgResponse.images ? imgResponse.images : []
+    // const cmResponse = await fetchContactMethods( catalog.id )
+    // const contactMethods = cmResponse.contact_methods ? cmResponse.contact_methods : []
     
     // console.log(`CatalogItem/contactMethods: `, contactMethods)
+
+    const images = await fetchProductImages( Number(product.id) )
+    const contactMethods = await fetchContactMethods( catalogId )
+    console.log(product)
 
     return (
         <div className={'flex flex-col justify-start rounded-lg bg-white shadow-xl divide-y'}>
         { images && images.length >= 1 ?
             <div className={'aspect-square rounded-t-lg'}>
-                <a href={`products/${ product.hexId }`}>
+                <a href={`products/${ product.alphanumId }`}>
                     <Image
                         className={'w-full rounded-t-lg'}
                         width={320}
@@ -53,7 +58,7 @@ const CatalogItem = async ({ product, catalog, ...props }:CatalogItemProps) => {
                             return (
                                 <ContactButton
                                     key={index}
-                                    catalog={catalog}
+                                    catalogId={catalogId}
                                     product={product}
                                     contactMethod={ method }
                                 />

@@ -5,6 +5,10 @@ const nextConfig = {
             {
                 protocol: "https",
                 hostname: 'api.milist.app',
+            },
+            {
+                protocol: "https",
+                hostname: 'mrgazjmksfzheungnvqd.supabase.co',
             }
         ]
     }
