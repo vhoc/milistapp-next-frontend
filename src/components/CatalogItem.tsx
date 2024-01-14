@@ -14,16 +14,8 @@ export interface CatalogItemProps extends CardProps {
 
 const CatalogItem = async ({ product, catalogId, ...props }:CatalogItemProps) => {
 
-    // const imgResponse = await fetchProductImages( product.id )
-    // const images = imgResponse.images ? imgResponse.images : []
-    // const cmResponse = await fetchContactMethods( catalog.id )
-    // const contactMethods = cmResponse.contact_methods ? cmResponse.contact_methods : []
-    
-    // console.log(`CatalogItem/contactMethods: `, contactMethods)
-
     const images = await fetchProductImages( Number(product.id) )
     const contactMethods = await fetchContactMethods( catalogId )
-    console.log(product)
 
     return (
         <div className={'flex flex-col justify-start rounded-lg bg-white shadow-xl divide-y'}>
@@ -44,9 +36,9 @@ const CatalogItem = async ({ product, catalogId, ...props }:CatalogItemProps) =>
             null
         }
             <div className={'flex flex-col p-3 items-start bg-white text-black rounded-b-lg'}>
-                <div className={'font-bold text-sky-900 text-2xl'}>{ product.title }</div>
-                <div className={'text-sky-700 text-xl'}>{ toMoneyString( product.price || 0, "$" ) }</div>
-                <p className={'text-slate-700'}>{ product.description ? <span>{ product.description }</span> : null }</p>
+                <div className={'font-bold text-sky-900 text-2xl md:text-xl lg:text-2xl'}>{ product.title }</div>
+                <div className={'text-sky-700 text-xl md:text-lg lg:text-xl'}>{ toMoneyString( product.price || 0, "$" ) }</div>
+                <p className={'text-slate-700 text-md md:text-sm lg:text-lg'}>{ product.description ? <span>{ product.description }</span> : null }</p>
             </div>
 
             <div className={'flex flex-col justify-end gap-2 p-2 h-full'} >

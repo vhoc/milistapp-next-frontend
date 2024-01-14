@@ -40,18 +40,9 @@ const CatalogPage = async ({ params, }: {
 }) => {
 
     const catalogId = parseInt( params.catalogXid, 36 )
-    const catalogData = await fetchCatalogData( params.catalogXid )
-    // const catalogOptions = catalogData && catalogData.catalog && catalogData.catalog.id ? await fetchCatalogOptions( catalogData.catalog.id ) : null
     const catalog = await fetchCatalog( catalogId )
-    // console.log(`catalog/page/catalog: `, catalog )
 
     const products = await fetchProducts( catalogId )
-
-    // if ( !catalogData.catalog ) {
-    //     return (
-    //         <NotFoundPage />
-    //     )
-    // }
 
     if ( catalog )
     {
@@ -60,17 +51,11 @@ const CatalogPage = async ({ params, }: {
                 className={`${titilliumRegular.className} antialiased flex flex-col items-center justify-center px-10 max-[360px]:px-0`}
                 style={{
                     width: '100%',
-                    // height: isBusyCatalog ? '100vh' : 'auto',
                     background: `${ catalog.background_gradient_shape }(${ catalog.background_gradient_shape === 'radial-gradient' ? "circle," : '' } ${ catalog.background_color_1 } ${ catalog.background_gradient_shape === 'radial-gradient' ? '0%' : '' }, ${ catalog.background_color_2 } ${ catalog.background_gradient_shape === 'radial-gradient' ? '100%' : '' }) fixed`,
-                    // backgroundAttachment: 'fixed',
-                    // backgroundRepeat: 'no-repeat',
-                    // backgroundSize: 'cover',
                     paddingBottom: '2rem',
-                    // paddingInline:'2rem',
                     position: 'relative',
                     zIndex: 1,
                     gap: 20,
-                    // border: `3px solid red`
                 }}
             >
                 <Hero catalogOptions={catalog} />

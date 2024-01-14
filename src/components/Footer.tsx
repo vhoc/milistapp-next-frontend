@@ -3,7 +3,7 @@ import imgIsoLogo from '../assets/milistapp-sm-logo.png'
 const Footer = () => {
 
     return (
-        <div className={'flex flex-col bg-white justify-center fixed bottom-0 h-32 w-full text-slate-800 items-center'}>
+        <div className={'flex flex-col bg-white justify-center fixed bottom-0 h-24 w-full text-slate-800 items-center'}>
             
             <div className="flex flex-wrap justify-center gap-2 p-2">
 

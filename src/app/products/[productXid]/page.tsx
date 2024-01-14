@@ -44,17 +44,12 @@ const ProductPage = async ( { params }: {
 } ) => {
 
     const product = await fetchProduct( params.productXid )
-    // console.log(product)
 
-    // console.log(product.user_id)
-    // const catalogData = await fetchCatalogData( product.user_id )
-    // console.log(catalogData)
     const catalog = await fetchCatalog( product?.catalog_id )
-    // console.log(catalogOptions)
+
     const productImages = await fetchProductImages( product?.id )
-    // console.log(productImages.images)
+
     const contactMethods = await fetchContactMethods( product?.catalog_id )
-    // console.log(contactMethods.contact_methods)
 
     if ( product ) {
 
