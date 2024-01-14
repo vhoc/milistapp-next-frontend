@@ -11,9 +11,7 @@ interface Props {
 const ProductList = async ({ catalogId, products }: Props) => {
 
     const responsiveColumns = ( productsAmount: number ): string => {
-        if ( productsAmount >= 7 && productsAmount < 9 ) return 'md:grid-cols-4'
-        if ( productsAmount >= 9 && productsAmount < 16 ) return 'md:grid-cols-5'
-        if ( productsAmount >= 16 ) return 'md:grid-cols-6'
+        if ( productsAmount >= 7 ) return 'md:grid-cols-4'
         return 'md:grid-cols-3'
     //     7: '4',
     //     9: '5',
