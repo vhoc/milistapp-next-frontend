@@ -46,6 +46,7 @@ const CatalogPage = async ({ params, }: {
 
     if ( catalog )
     {
+        // console.log(catalog)
         return (
             <div
                 className={`${titilliumRegular.className} antialiased flex flex-col items-center justify-center px-10 max-[360px]:px-0`}

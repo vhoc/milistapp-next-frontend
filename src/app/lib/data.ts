@@ -51,7 +51,7 @@ export const fetchCatalog = async (catalogId: number) => {
             console.error(error.message)
             return null
         }
-        // console.log(`fetchCatalog/data: `, data)
+        console.log(`fetchCatalog/data: `, data)
         return data
     } catch (error) {
         console.error(error)
